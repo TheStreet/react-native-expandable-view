@@ -3,8 +3,7 @@ import {
     Text, 
     View, 
     TouchableHighlight, 
-    LayoutAnimation,
-    Dimensions 
+    LayoutAnimation
 } from 'react-native';
 
 import Style from './style';

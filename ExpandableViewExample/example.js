@@ -11,7 +11,7 @@ import ExpandableView from 'react-native-expandable-view';
 export default class ExpandableViewExample extends React.Component {
     render() {
         return (
-            <ScrollView style={styles.grey}>
+            <ScrollView>
                 <ExpandableView
                     text='Tap to expand box'
                 >
@@ -32,9 +32,6 @@ export default class ExpandableViewExample extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'grey'
-    },
     redBox: {
         paddingTop: 50,
         minHeight: 600,
