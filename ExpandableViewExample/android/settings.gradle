@@ -1,0 +1,3 @@
+rootProject.name = 'ExpandableViewExample'
+
+include ':app'

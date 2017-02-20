@@ -1,5 +1,8 @@
 # react-native-expandable-view
 
+[![NPM Version](https://img.shields.io/npm/v/react-native-expandable-view.svg?style=flat)](https://www.npmjs.com/package/react-native-expandable-view)
+[![NPM Downloads](https://img.shields.io/npm/dm/react-native-expandable-view.svg?style=flat)](https://www.npmjs.com/package/react-native-expandable-view)
+
 ---
 An expandable view for react native, working both on Android and iOS.
 
@@ -10,7 +13,7 @@ npm install react-native-expandable-view --save
 
 ## <a name='usage'>Usage</a>
 ```
-import DataTable from 'react-native-datatable';
+import ExpandableView from 'react-native-expandable-view';
 ```
 
 Then wrap the view you wish to be expandable. 
