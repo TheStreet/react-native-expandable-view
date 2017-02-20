@@ -9,7 +9,6 @@ import {
 
 import Style from './style';
 
-const width = Dimensions.get('window').width;
 const EXPAND_BTTN_HEIGHT = 50;
 
 /**
@@ -39,7 +38,7 @@ class ExpandableView extends React.Component {
             <View>
                 <View
                     ref='Content'
-                    style={this.state.contentContainerStyle}
+                    style={this.state.contentContainerStyle} 
                 >
                     {this.props.children}
                 </View>
@@ -74,7 +73,6 @@ class ExpandableView extends React.Component {
                     Style.button,
                     {
                         height: this.state.expandButtonHeight,
-                        width: width
                     }
                 ]}
             >
