@@ -7,7 +7,7 @@ import {
     Dimensions 
 } from 'react-native';
 
-import Style from '../Style';
+import Style from './style';
 
 const width = Dimensions.get('window').width;
 const EXPAND_BTTN_HEIGHT = 50;
@@ -70,23 +70,17 @@ class ExpandableView extends React.Component {
                     })
                 }}
                 underlayColor={'#F7F7F7'}
-                style={{
-                    height: this.state.expandButtonHeight,
-                    position: 'absolute',
-                    bottom: 0,
-                    backgroundColor: '#fff',
-                    justifyContent: 'center',
-                    width: width
-                }}
+                style={[
+                    Style.button,
+                    {
+                        height: this.state.expandButtonHeight,
+                        width: width
+                    }
+                ]}
             >
-                <Text
-                    style={{
-                        position: 'relative',
-                        bottom: 0,
-                        padding: 5,
-                        textAlign: 'center',
-                    }}
-                >Tap here to expand</Text>
+                <Text style={Style.buttonText}>
+                    {this.props.text}
+                </Text>
             </TouchableHighlight>
         );
     }
@@ -94,10 +88,12 @@ class ExpandableView extends React.Component {
 
 ExpandableView.propTypes = {
     initialMaxHeight: React.PropTypes.number,
+    text: React.PropTypes.string
 };
 
 ExpandableView.defaultProps = {
-    initialMaxHeight: 500
+    initialMaxHeight: 500,
+    text: 'Tap here to expand'
 };
 
 export default ExpandableView;

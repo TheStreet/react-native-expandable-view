@@ -13,10 +13,12 @@ npm install react-native-expandable-view --save
 import DataTable from 'react-native-datatable';
 ```
 
-Then wrap the view you wish to be expandable
+Then wrap the view you wish to be expandable. 
 
-```
-<ExpandableView >
+It will automatically become expandable if the height of its content exceeds the given initial manxium height.
+
+```js
+<ExpandableView>
     <View>
         <Text>My expandable view</Text>
     </View>
@@ -27,5 +29,6 @@ Then wrap the view you wish to be expandable
 
 | Prop | Description | Default |
 |---|---|---|
-|**`intialMaxHeight`**|The maxmium height of your content can be before it becomes expandable|500|
+|**`intialMaxHeight`**|The maxmium height your content can be before it becomes expandable|500|
+|**`text`**|Text for the expand button|'Tap here to expand'|
 
