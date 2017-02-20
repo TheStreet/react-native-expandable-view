@@ -1,0 +1,26 @@
+{
+  "name": "react-native-expandable-view",
+  "version": "0.0.1",
+  "description": "Expandable View for React Native",
+  "main": "expandableView.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheStreet/react-native-expandable-view.git"
+  },
+  "keywords": [
+    "React",
+    "Native",
+    "ReactNative",
+    "Expandable",
+    "View"
+  ],
+  "author": "Philip Mortiboy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheStreet/react-native-expandable-view/issues"
+  },
+  "homepage": "https://github.com/TheStreet/react-native-expandable-view#readme"
+}
