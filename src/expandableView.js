@@ -74,6 +74,9 @@ class ExpandableView extends React.Component {
                         height: this.state.expandButtonHeight,
                     }
                 ]}
+                accessible={true}
+                accessibilityTraits={'button'}
+                accessibilityLabel={this.props.text}
             >
                 <Text style={Style.buttonText}>
                     {this.props.text}
