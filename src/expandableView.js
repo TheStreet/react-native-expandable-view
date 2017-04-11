@@ -88,9 +88,10 @@ class ExpandableView extends React.Component {
                 underlayColor={'#F7F7F7'}
                 style={[
                     Style.button,
+                    this.props.buttonStyle,
                     {
                         height: this.state.expandButtonHeight,
-                    }
+                    },
                 ]}
                 accessible={true}
                 accessibilityTraits={'button'}
@@ -107,7 +108,8 @@ class ExpandableView extends React.Component {
 ExpandableView.propTypes = {
     initialMaxHeight: React.PropTypes.number,
     text: React.PropTypes.string,
-    header: React.PropTypes.element
+    header: React.PropTypes.element,
+    buttonStyle: React.PropTypes.object
 };
 
 ExpandableView.defaultProps = {

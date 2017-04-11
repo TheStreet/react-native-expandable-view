@@ -49,4 +49,5 @@ When providing this prop, all content in the header will be rendered. The conten
 |**`intialMaxHeight`**|The maxmium height your content can be before it becomes expandable|500|
 |**`text`**|Text for the expand button|'Tap here to expand'|
 |**`header`**|When provided, the header component will always be shown and the child components will be hidden until expanded||
+|**`buttonStyle`**|Style object that will be applied to the button View||
 
