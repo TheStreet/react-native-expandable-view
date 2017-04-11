@@ -13,7 +13,17 @@ export default class ExpandableViewExample extends React.Component {
         return (
             <ScrollView>
                 <ExpandableView
+                    header={this.renderHeader()}
+                >
+                    <View style={styles.yellowBox}>
+                        <Text>
+                            Expanded content
+                        </Text>
+                    </View>
+                </ExpandableView>
+                <ExpandableView
                     text='Tap to expand box'
+                    initialMaxHeight={200}
                 >
                     <View style={styles.redBox}>
                         <Text>
@@ -29,17 +39,34 @@ export default class ExpandableViewExample extends React.Component {
             </ScrollView>
         );
     }
+
+    renderHeader() {
+        return (
+            <View style={styles.greenBox}>
+                <Text>A header</Text>
+            </View>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
     redBox: {
         paddingTop: 50,
-        minHeight: 600,
+        minHeight: 400,
         backgroundColor: 'red'
     },
     blueBox: {
         paddingTop: 50,
         minHeight: 300,
         backgroundColor: 'blue'
+    },
+    greenBox: {
+        paddingTop: 50,
+        minHeight: 200,
+        backgroundColor: 'green'
+    },
+    yellowBox: {
+        minHeight: 200,
+        backgroundColor: 'yellow'
     }
 });

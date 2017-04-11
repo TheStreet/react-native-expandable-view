@@ -1,6 +1,6 @@
 {
   "name": "react-native-expandable-view",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Expandable View for React Native",
   "main": "expandableView.js",
   "scripts": {
