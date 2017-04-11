@@ -13,7 +13,7 @@ export default class ExpandableViewExample extends React.Component {
         return (
             <ScrollView>
                 <ExpandableView
-                    header={(this.renderHeader())}
+                    header={this.renderHeader()}
                 >
                     <View style={styles.yellowBox}>
                         <Text>
