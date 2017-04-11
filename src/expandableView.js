@@ -19,7 +19,7 @@ class ExpandableView extends React.Component {
 
         this.state = {
             contentContainerStyle: {
-                maxHeight: this.props.initialMaxHeight
+                maxHeight: this.props.header ? 0 : this.props.initialMaxHeight
             },
             expandButtonHeight: 0
         };
@@ -34,7 +34,10 @@ class ExpandableView extends React.Component {
 
     render() {
         return (
-            <View>
+            <View
+                style={this.props.style}
+            >
+                {this.renderHeader()}
                 <View
                     ref='Content'
                     style={this.state.contentContainerStyle} 
@@ -47,6 +50,11 @@ class ExpandableView extends React.Component {
     }
 
     setCanExpand(){
+        if(this.props.header)
+            this.setState({
+                expandButtonHeight: EXPAND_BTTN_HEIGHT
+            });
+
         if (this.refs.Content) {
             this.refs.Content.measure((ox, oy, width, height, px, py) => {
                 if(height > (this.props.initialMaxHeight - EXPAND_BTTN_HEIGHT))
@@ -55,6 +63,16 @@ class ExpandableView extends React.Component {
                     });
             });   
         }
+    }
+
+    renderHeader() {
+        if(!this.props.header) return null;
+
+        return (
+            <View>
+                {this.props.header}
+            </View>
+        );
     }
 
     renderExpandButton(){
@@ -88,7 +106,8 @@ class ExpandableView extends React.Component {
 
 ExpandableView.propTypes = {
     initialMaxHeight: React.PropTypes.number,
-    text: React.PropTypes.string
+    text: React.PropTypes.string,
+    header: React.PropTypes.element
 };
 
 ExpandableView.defaultProps = {

@@ -2,10 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     button: {
-        position: 'absolute',
-        bottom: 0,
-        left:0,
-        right:0,
+        alignSelf: 'stretch',
         backgroundColor: '#fff',
         flexDirection: 'row',
         justifyContent: 'center',
