@@ -97,7 +97,7 @@ class ExpandableView extends React.Component {
                 accessibilityTraits={'button'}
                 accessibilityLabel={this.props.text}
             >
-                <Text style={Style.buttonText}>
+                <Text style={Style.buttonText} numberOfLines={1} ellipsizeMode="tail">
                     {this.props.text}
                 </Text>
             </TouchableHighlight>
