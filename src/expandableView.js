@@ -18,9 +18,7 @@ class ExpandableView extends React.Component {
         super(props);
 
         this.state = {
-            contentContainerStyle: {
-                maxHeight: this.props.header ? 0 : this.props.initialMaxHeight
-            },
+            hideContent: true,
             expandButtonHeight: 0
         };
 
@@ -38,15 +36,23 @@ class ExpandableView extends React.Component {
                 style={this.props.style}
             >
                 {this.renderHeader()}
-                <View
-                    ref='Content'
-                    style={this.state.contentContainerStyle} 
-                >
-                    {this.props.children}
-                </View>
+                {this.renderContent()}
                 {this.renderExpandButton()}
             </View>
         );
+    }
+
+    renderContent() {
+        if(this.state.hideContent)
+            return null;
+
+        return (
+            <View
+                ref='Content'
+            >
+                {this.props.children}
+            </View>
+        )
     }
 
     setCanExpand(){
@@ -81,7 +87,7 @@ class ExpandableView extends React.Component {
                 onPress={() => {
                     LayoutAnimation.easeInEaseOut();
                     this.setState({
-                        contentContainerStyle: {},
+                        hideContent: false,
                         expandButtonHeight: 0
                     })
                 }}
