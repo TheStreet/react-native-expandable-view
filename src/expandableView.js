@@ -1,8 +1,10 @@
 import React from 'react';
-import { 
-    Text, 
-    View, 
-    TouchableHighlight, 
+import PropTypes from 'prop-types';
+
+import {
+    Text,
+    View,
+    TouchableHighlight,
     LayoutAnimation
 } from 'react-native';
 
@@ -14,7 +16,7 @@ const EXPAND_BTTN_HEIGHT = 50;
  * A View that can be expanded if its content exceeds the given max height
  */
 class ExpandableView extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -25,7 +27,7 @@ class ExpandableView extends React.Component {
         this.setCanExpand = this.setCanExpand.bind(this);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         // https://github.com/facebook/react-native/issues/953
         setTimeout(this.setCanExpand);
     }
@@ -43,7 +45,7 @@ class ExpandableView extends React.Component {
     }
 
     renderContent() {
-        if(this.state.hideContent)
+        if (this.state.hideContent)
             return null;
 
         return (
@@ -55,24 +57,24 @@ class ExpandableView extends React.Component {
         )
     }
 
-    setCanExpand(){
-        if(this.props.header)
+    setCanExpand() {
+        if (this.props.header)
             this.setState({
                 expandButtonHeight: EXPAND_BTTN_HEIGHT
             });
 
         if (this.refs.Content) {
             this.refs.Content.measure((ox, oy, width, height, px, py) => {
-                if(height > (this.props.initialMaxHeight - EXPAND_BTTN_HEIGHT))
+                if (height > (this.props.initialMaxHeight - EXPAND_BTTN_HEIGHT))
                     this.setState({
                         expandButtonHeight: EXPAND_BTTN_HEIGHT
                     });
-            });   
+            });
         }
     }
 
     renderHeader() {
-        if(!this.props.header) return null;
+        if (!this.props.header) return null;
 
         return (
             <View>
@@ -81,7 +83,7 @@ class ExpandableView extends React.Component {
         );
     }
 
-    renderExpandButton(){
+    renderExpandButton() {
         return (
             <TouchableHighlight
                 onPress={() => {
@@ -112,10 +114,10 @@ class ExpandableView extends React.Component {
 }
 
 ExpandableView.propTypes = {
-    initialMaxHeight: React.PropTypes.number,
-    text: React.PropTypes.string,
-    header: React.PropTypes.element,
-    buttonStyle: React.PropTypes.object
+    initialMaxHeight: PropTypes.number,
+    text: PropTypes.string,
+    header: PropTypes.element,
+    buttonStyle: PropTypes.object
 };
 
 ExpandableView.defaultProps = {
