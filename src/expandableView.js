@@ -84,6 +84,10 @@ class ExpandableView extends React.Component {
     }
 
     renderExpandButton() {
+        if(!this.state.hideContent){
+            return null;
+        }
+        
         return (
             <TouchableHighlight
                 onPress={() => {
