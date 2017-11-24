@@ -50,7 +50,7 @@ class ExpandableView extends React.Component {
 
         return (
             <View
-                ref='Content'
+                ref={(ref) => this.Content = ref}
             >
                 {this.props.children}
             </View>
